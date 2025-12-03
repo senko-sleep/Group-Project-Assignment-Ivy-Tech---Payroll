@@ -1,4 +1,234 @@
-TODO: Allen Poston 
-- Fill out the skeleton of the project
+PAYROLL_PROGRAM_ROADMAP.txt
+team paymasters – full code roadmap (person 1 draft)
+----------------------------------------------------
 
-# Hello world
+author:
+    person 1 – allen poston
+role:
+    planner + input & validation lead
+purpose:
+    provide the complete program structure,
+    implement all person 1 code,
+    leave todo sections for other members.
+
+
+====================================================
+section 1 – overview of final program structure
+====================================================
+
+the final payroll program will be divided into 4 main modules:
+
+module 1 – input & validation  (person 1)
+module 2 – payroll calculations (person 2)
+module 3 – output + file save (person 3)
+module 4 – testing system + db prep (person 4)
+
+this roadmap defines:
+    - function order
+    - pseudocode structure
+    - integration points
+    - todo areas for teammates
+
+
+====================================================
+section 2 – master program roadmap (pseudocode)
+====================================================
+
+----------------------------------------------------
+main program
+----------------------------------------------------
+
+start program
+
+    load or define max_hours_allowed
+    display "payroll system initializing..."
+
+    set employee_count = 0
+
+    while employee_count < 10 do
+
+        // person 1 module call
+        employee_data = call get_employee_data()
+
+        if employee_data == "invalid" then
+            continue // invalid input retry
+        endif
+
+        // person 2 - todo
+        // pay_rate = call get_pay_rate(employee_data.empid)
+
+        // person 2 - todo
+        // payroll_data = call calculate_payroll(
+        //                     employee_data.hoursworked,
+        //                     pay_rate
+        //                 )
+
+        // person 3 - todo
+        // call save_and_display_results(employee_data, payroll_data)
+
+        employee_count = employee_count + 1
+
+    end while
+
+    // person 3 - todo
+    // call write_results_to_file()
+
+    // person 4 - todo
+    // call run_tests()
+
+end program
+
+
+
+====================================================
+section 3 – person 1 full module (completed)
+====================================================
+
+----------------------------------------------------
+module: get_employee_data()
+author: person 1 – allen poston
+----------------------------------------------------
+
+module get_employee_data()
+
+    display "---- employee data entry ----"
+
+    declare firstname, lastname, empid
+    declare dependents, hoursworked
+
+    display "enter first name:"
+    input firstname
+
+    display "enter last name:"
+    input lastname
+
+    display "enter employee id:"
+    input empid
+
+    display "enter number of dependents:"
+    input dependents
+
+    display "enter hours worked:"
+    input hoursworked
+
+
+    // security checks (lowercase comments)
+
+    if hoursworked < 0 then
+        display "error: negative hours not allowed."
+        return "invalid"
+    endif
+
+    if hoursworked > max_hours_allowed then
+        display "error: hours exceed maximum allowed."
+        return "invalid"
+    endif
+
+    if dependents < 0 then
+        display "error: dependents cannot be negative."
+        return "invalid"
+    endif
+
+    if empid == "" then
+        display "error: employee id required."
+        return "invalid"
+    endif
+
+    if hoursworked > 40 then
+        display "notice: overtime hours detected."
+    endif
+
+    return (firstname, lastname, empid, dependents, hoursworked)
+
+endmodule
+
+
+
+====================================================
+section 4 – placeholders for other members (todo)
+====================================================
+
+----------------------------------------------------
+module: calculate_payroll()  
+assigned to: person 2 – todo
+----------------------------------------------------
+todo person 2:
+module calculate_payroll(hoursworked, payrate)
+
+    // compute gross pay
+    // compute overtime pay
+    // compute taxes
+    // compute net pay
+    // return payroll package
+
+endmodule
+
+
+----------------------------------------------------
+module: get_pay_rate()  
+assigned to: person 2 – todo
+----------------------------------------------------
+todo person 2:
+module get_pay_rate(empid)
+
+    // lookup payrate from database or table
+    // return payrate
+
+endmodule
+
+
+----------------------------------------------------
+module: save_and_display_results()  
+assigned to: person 3 – todo
+----------------------------------------------------
+todo person 3:
+module save_and_display_results(employee_data, payroll_data)
+
+    // store in lists
+    // display formatted results
+    // prep for file save
+
+endmodule
+
+
+----------------------------------------------------
+module: write_results_to_file()
+assigned to: person 3 – todo
+----------------------------------------------------
+todo person 3:
+module write_results_to_file()
+
+    // write stored data to txt or csv
+    // close file
+
+endmodule
+
+
+----------------------------------------------------
+module: run_tests()
+assigned to: person 4 – todo
+----------------------------------------------------
+todo person 4:
+module run_tests()
+
+    // define 10 test cases
+    // run through modules
+    // record outcomes
+
+endmodule
+
+
+
+====================================================
+section 5 – integration notes (person 1)
+====================================================
+
+- all variable names must match between modules  
+- outputs from one module must be usable by the next  
+- test cases will confirm whether each module works correctly  
+- after all todos are completed, this roadmap becomes the final full program
+
+
+====================================================
+end of file
+====================================================
