@@ -154,7 +154,7 @@ Before submitting, verify you have ALL of these:
 
 ## Communication Tips
 
-- Use Discord or email to share updates
+- Use [Discord](https://discord.gg/eefPWCeDz6) or email to share updates
 - Test your section before passing to the next person
 - If something doesn't work, describe the problem clearly
 - Check that variable names match what the previous person made
