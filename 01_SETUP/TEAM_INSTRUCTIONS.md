@@ -1,7 +1,7 @@
 # Team A - Step by Step Instructions
 
 ## Group Info
-- **Group Name:** Team PayMasters
+- **Group Name:** Group A
 - **Members:** Allen Poston, Alexander Mansfield, Armando Ochoa, Aniya Howell
 
 ---
